@@ -1,0 +1,6 @@
+Producttív állaptbahelyezés után menteni is kell!!
+
+
+új elem a ZCRMST_ZQ00_DATA
+
+ZWS_ZQ_00

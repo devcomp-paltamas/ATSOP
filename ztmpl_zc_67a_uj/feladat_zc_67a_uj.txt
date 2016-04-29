@@ -1,0 +1,142 @@
+ztmpl_ZC_67a_uj
+
+
+Kivettem az aljáról amit ki kell
+70000000559- 67auj
+
+
+Könyvjelszõk: táblába definiálcva
+*------------------------------------------*
+ztmpl_ZC_67a_uj.doc	ZC67ARAKLKULDALDIJ	ZC_67A_RAKLKULDALDIJ
+ztmpl_ZC_67a_uj.doc	ZC67AUAFELAR13		ZC_67A_UAFELAR13
+ztmpl_ZC_67a_uj.doc	ZC67AUAFELAR2		ZC_67A_UAFELAR2
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ		ZQ_3_UJ_EUTDIJ
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ13		ZC_67A_UJ_EUTDIJ13
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ2		ZC_67A_UJ_EUTDIJ2
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJN		ZQ_3_UJ_EUTDIJN
+ztmpl_ZC_67a_uj.doc	ZC67AUJINVSERVICE	ZC_67A_UJ_INVERTEDSERVICE
+ztmpl_ZC_67a_uj.doc	ZC67AUJLEHIV		ZC_67A_UJ_LEHIV
+ztmpl_ZC_67a_uj.doc	ZC67AUJPONTBAN		ZC_67A_UJ_PONTBAN
+ztmpl_ZC_67a_uj.doc	ZC67AUJVALUEPREMIUM	ZC_67A_UJ_VALUEPREMIUM
+ztmpl_ZC_67a_uj.doc	ZC67AUJVALUEPREMIUM2	ZC_67A_UJ_VALUEPREMIUM
+*------------------------------------------*
+
+
+ZC67ARAKLKULDALDIJ				
+ez a blokk a raklapos küldemények 
+alapdíja rész
+
+
+ZC67AUAFELAR13					
+az üzemanyag felárban
+, 1.3
+
+ZC67AUAFELAR2					
+az üzemanyag felárban
+és a 2.pont
+
+
+ZC67AUJEUTDIJ					
+E-Útdíj felár blokk
+ZC67AUJEUTDIJ13				word(töröltem)			
+, 1.3
+ZC67AUJEUTDIJ2				word(töröltem)	
+és 2.
+
+
+ZC67AUJINVSERVICE				
+Inverz szolgáltatás blokk
+
+ZC67AUJLEHIV
+6. pontban a Kiegészítõ- és...
+A lehívásos megrendelés blokk
+
+
+ZC67AUJPONTBAN				word(töröltem)
+E-útdíj-ban
+pontban
+
+
+ZC67AUJVALUEPREMIUM
+Értékhez igazodó díj
+
+
+ZC67AUJVALUEPREMIUM2
+4. pont
+
+*------------------------------------------*
+Újjakat vettem fel:
+ZC67AUJPOSTPCS
+
+
+
+
+Felhívódnak:
+*------------------------------------------*
+ZCRM_GET_ZC67A_UJ_ATTR
+
+ZCRM_GET_ZC67A_UJ_ATTR2
+ZCRM_GET_ZC67A_UJ_ATTR3
+
+alap hívások:
+ZCL_CRM_ZC67A_RUN_BTIL
+if_crm_runtime_btil~read_attributes.
+
+*------------------------------------------*
+Customizing beállítás táblák módosítása:
+ZCRM_ZC67A_UJ_C1
+ZCRM_ZC67A_UJ_C2
+összevont quantiti miatt
+
+
+
+
+lehívás
+100	ztmpl_ZC_67a_uj.doc	ZC67AUJLEHIV	ZC_67A_UJ_LEHIV	
+
+*---------------------------------------*
+zcrm_zq3_tblcus1
+ha 
+ONEDAYONEPARCEL	                                   
+ONEDAYMOREPARCEL	                                   
+TWODAYSONEPARCEL	                                   
+TWODAYSMOREPARCEL	                                   
+mindegyik nulla
+
+GET_ZQ3_UJ_TABLE2_ATTR 
+
+
+*---------------------------------------*
+eddig a ZCRMST_ZQ3_TABLE4
+MASS				tömeg
+ONEDAYPOONEPARCEL		1 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
+ONEDAYPOMOREPARCEL		1 munkanapos idõgarancia - Postán marad - t csomag / címzett
+ONEDAYMOLONEPARCEL		1 munkanapos idõgarancia - MOL Po - 1 csomag / címz
+ONEDAYMOLMOREPARCEL		1 munkanapos idõgarancia - MOL Po - több csomag / címz
+TWODAYSPOONEPARCEL		2 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
+TWODAYSPOMOREPARCEL		2 munkanapos idõgarancia - Postán marad - t csomag / címzett
+TWODAYSMOLONEPARCEL		2 munkanapos idõgarancia - MOL Po - 1 csomag / címz
+TWODAYSMOLMOREPARCEL		2 munkanapos idõgarancia - MOL Po - több csomag / címz
+beállító tábla:	ZCRM_ZQ3_TBLCUS2
+*---------------------------------------*
+
+lehet hogy kell
+ZCRMST_ZQ3_TABLE8-	
+MASS				tömeg
+ONEDAYPOONEPARCEL		1 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
+ONEDAYPOMOREPARCEL		1 munkanapos idõgarancia - Postán marad - t csomag / címzett
+				1 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
+				1 munkanapos idõgarancia - PostaPont - t csomag / címzett
+ONEDAYMOLONEPARCEL		1 munkanapos idõgarancia - MOL Po - 1 csomag / címz
+ONEDAYMOLMOREPARCEL		1 munkanapos idõgarancia - MOL Po - több csomag / címz
+
+
+ZCRMST_ZQ3_TABLE9-	
+MASS				tömeg
+ONEDAYPOONEPARCEL		2 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
+ONEDAYPOMOREPARCEL		2 munkanapos idõgarancia - Postán marad - t csomag / címzett
+				2 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
+				2 munkanapos idõgarancia - PostaPont - t csomag / címzett
+ONEDAYMOLONEPARCEL		2 munkanapos idõgarancia - MOL Po - 1 csomag / címz
+ONEDAYMOLMOREPARCEL		2 munkanapos idõgarancia - MOL Po - több csomag / címz
+

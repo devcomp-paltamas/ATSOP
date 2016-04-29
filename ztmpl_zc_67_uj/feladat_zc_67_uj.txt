@@ -1,0 +1,139 @@
+BOOKMARK	-
+(a módszereket nem törlöm csak a hivatkozást rájuk)
+*------------------------------------------------------*
+ZC67UJCONTRFIXTERM				-törölni	-ZC_67_UJ_CONTRFIXTERM
+határozott idõre ( -ig)
+
+ZC67UJCONTRINDEFTERM				-törölni	-ZC_67_UJ_CONTRINDEFTERM
+határozatlan idõre
+
+ZC67UJEUV					-törölni	-ZC_67_UJ_EUV
+ EUV
+
+MÓOSÍTVA- felraktam
+ZC67UJNIGHTDELIV				-marad		ZC_67_UJ_NIGHTDELIV
+1.3.	Az éjszakai kézbesítés címhelyeit a függelék II. pontja tartalmazza.
+
+ZC67UJPAYM1					-törölni	-ZQ_1_TRANSFER
+az ÁSZKF 4.2. pontja szerint
+
+ZC67UJPAYM2					-törölni	-ZQ_1_KESZPENZ
+feladáskor készpénzben
+
+ZC67UJPAYM2WEEKLY				-marad		ZC_67_UJ_PAYM2WEEKLY
+kétheti
+ZC67UJPAYMMONTHLY				-marad		ZC_67_UJ_PAYMMONTHLY
+havi
+ZC67UJPAYMWEEKLY				-marad		ZC_67_UJ_PAYMWEEKLY
+heti
+
+ZC67UJPBP					-törölni	-ZC_67_UJ_PBP
+, valamint PBP
+
+ZC67UJPBPVALAMI					-törölni	-ZC_67_UJ_PBPVALAMI
+ valamint
+
+ZC67UJPSP					-törölni	-ZC_67_UJ_PSP
+, valamint Posta Sped
+
+ZC67UJPSPVALAMI					-törölni	-ZC_67_UJ_PSPVALAMI
+ valamint
+
+TÁBLÁBA BENNE VAN  DE A Wodben nincs???
+---------------------------------------
+ZC67UJREVOKE					-???		-ZC_67_UJ_REVOKE
+
+
+*------------------------------------------------------*
+Új- ak 
+ZC67UJABOLITION							ZC_67_UJ_ABOLITION
+
+ZC67UJDOKMANAG							ZC_67_UJ_DOKMANAG
+
+ZC67UJFORGFELV							ZC_67_UJ_FORGFELV
+
+ZC67UJTERVNETTO							ZC_67_UJ_TERVNETTO
+
+
+*------------------------------------------------------*
+Érékek:
+ZCL_CRM_TEMPL_BOL_ENH
+
+GET_ZC67_UJ_DATA_ATTR2 módszer
+TYPE ZCRMST_ZC_67_DATA2_T
+
+
+
+
+*------------------------------------------------------*
+debugg
+GET_ZC67_UJ_ATTR (ZCL_CRM_TEMPL_BOL_ENH)
+GET_ZC67_UJ_DATA_ATTR2 (ZCL_CRM_TEMPL_BOL_ENH)---!!!EZ!!!----
+po_name
+GET_ZC67_UJ_DATA_ATTR3 (ZCL_CRM_TEMPL_BOL_ENH)
+
+
+ZCRMST_ZC_67_DATA2 struktúra két új mezõ:
+TERV_EV_NETTO
+FORGFEL_PER
+felvettem a új mezõket - 
+
+ztmpl_ZC_67_uj
+csomópont neve: 	ZTemplZC67uj
+			ZC67ujTemplZC67ujData2
+(zservice_pro a két felvett mezõ beállítottam)
+ZWS_ZC_67_UJ
+KÉDÉS:
+- webservice add new item
+TERV_EV_NETTO
+FORGFEL_PER
+
+visszaváltotam nem produktívra
+ZWS_ZC_67_UJ
+
+Haszn mint: Szolgáltatásobjektum
+Üzleti obj: Szolgáltatásszerzõdés
+
+
+*------------------------------------------------------*
+1. Kimenteni a bookmarkokat
+2. Átalakítani a wordot
+3. Berakni az új bookmarkokat
+4. Az új értékek helyének megkeresése
+5. 
+
+
+
+*------------------------------------------------------*
+ZCRM_TEMPLBM_CUS
+módosítása, új mezõ:
+DEVDATA	ZARMD_DEVDATA
+          	Nincs beállítva
+1	BEÁLLÍTVA: Megjelenik bookmark
+2	BEÁLLÍTVA: Nem jelenik meg a bookmark
+
+
+*------------------------------------------------------*
+sm30 --- ZCRM_TEMPLBM_CUS
+
+TEML_NAME = ztmpl_ZC_67_uj*
+ztmpl_ZC_67_uj.doc
+
+
+
+*------------------------------------------------------*
+
+
+
+
+GET_ZC67_UJ_DATA_ATTR2
+*PT: Add new value
+        FIELD-SYMBOLS <ls_data> TYPE zcrmst_zc_67_data2.
+        READ TABLE rv_data ASSIGNING <ls_data> INDEX 1.
+        IF sy-subrc eq 0.
+          <ls_data>-terv_ev_netto = `1 999`.
+          <ls_data>-forgfel_per   = `30`.
+        ENDIF.
+
+
+
