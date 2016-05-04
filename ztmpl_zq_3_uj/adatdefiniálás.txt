@@ -1,0 +1,90 @@
+Obj. külsõ neve ZQ_3_uj_Table5
+-------------------------------
+ Objektumnév          ZQ_3_UJ_TABLE5
+ Megnevezés
+ Objektumfajta
+ Struktúra            ZCRMST_ZQ3_TABLE5
+ Struktúra            CRMT_OBJECT_GUID
+ Eredményobj.-név
+
+-------------------------------
+ZCL_CRM_ZQ3_TABLE5
+
+
+
+
+
+
+Táblák a kapcsolathoz
+-------------------------------
+1. CRMC_OBJ_BTIL_C-Customer specific implementations for objects
+karbantartási nézet: CRMV_OBJ_BTIL_C
+OBJ_IL	CRMT_EXT_OBJ_NAME
+HANDLER_CLASS	STRUKNAME
+pl.:
+ZQ_3_uj_Table4	ZCL_CRM_ZQ3_TABLE4
+---------------------------------------
+
+2. CRMC_OBJ_BTIL-
+
+---------------------------------------
+
+3. CRMC_ORLALL_BTIL
+   CRMC_ORLTXT_BTIL
+karbantartási nézet: CRMV_ORLALL_BTIL
+pl:
+ZQ_3_uj_Templ	ZQ3ujTemplZQ3ujTable4	ZQ_3_uj_Table4
+vagyis a ZQ_3_uj_Templ alatt van 
+---------------------------------------
+
+4. CRMC_OBJ_BTIL
+   CRMC_OBJECTS
+   CRMC_OBJECTS_T
+karbantartási nézet: CRMV_OBJ_BTIL
+pl.:
+
+Obj. külsõ neve ZQ_3_uj_Table4
+ Objektumnév          ZQ_3_UJ_TABLE4
+ Megnevezés
+ Objektumfajta
+ Struktúra            ZCRMST_ZQ3_TABLE4
+ Struktúra            CRMT_OBJECT_GUID
+---------------------------------------
+
+ZCRM_GET_ZC67_UJ_ATTR3 függvény
+  ev_data = zcl_crm_templ_bol_enh=>get_zc67_uj_data_attr3( iv_object_guid ).
+
+
+class-methods GET_ZC67_UJ_DATA_ATTR3
+  importing
+    !IV_OBJECT_GUID type CRMT_OBJECT_GUID
+  returning
+    value(RV_DATA) type ZCRMST_ZC_67_DATA3_T .
+
+
+*---------------------------------------*
+(mintaként másolva ZQ_3_uj_Table7)
+
+1. Struktúra létrehozása
+OK- ZCRMST_ZQ3_TABLE8
+
+2. bekötni a genilbe
+OK- ZQ_3_uj_Table7 sor másolása ZQ_3_uj_Table8
+2.1 új sor a ZQ_3_uj_Table8
+2.2 új sor a ZQ_3_uj_Table8
+2.3 új sor a ZQ_3_uj_Table8
+
+
+3. felvenni a webservicébe
+(generálás)
+létrejön a ZCL_CRM_XXXXX_RUN_BTIL osztály
+IF_CRM_RUNTIME_BTIL~READ_ATTRIBUTES
+
+
+4. 
+
+
+
+5.
+
+

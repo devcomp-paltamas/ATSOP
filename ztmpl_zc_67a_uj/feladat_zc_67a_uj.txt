@@ -139,4 +139,9 @@ ONEDAYPOMOREPARCEL		2 munkanapos idõgarancia - Postán marad - t csomag / címzett
 				2 munkanapos idõgarancia - PostaPont - t csomag / címzett
 ONEDAYMOLONEPARCEL		2 munkanapos idõgarancia - MOL Po - 1 csomag / címz
 ONEDAYMOLMOREPARCEL		2 munkanapos idõgarancia - MOL Po - több csomag / címz
+*---------------------------------------*
 
+
+*---------------------------------------*
+lehívások a ZCRM_GET_ZQ3_UJ_TABLE3_ATTR
+függvény adja vissza

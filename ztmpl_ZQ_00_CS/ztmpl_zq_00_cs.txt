@@ -1,6 +1,22 @@
 Producttív állaptbahelyezés után menteni is kell!!
 
+kivettem:
+Kiemelt Ügyfelek Értékesítési Osztály /
+Stratégiai és Nemzetközi Értékesítési Osztály / 
+KKV Értékesítési Osztály
 
+
+
+
+GET_ZQ00_DATA módszer,
 új elem a ZCRMST_ZQ00_DATA
+ORGANIZ
+
+ide kell majd betölteni...
 
 ZWS_ZQ_00
+
+CL_CRM_PPM_UM_TOOLKIT
+
+
+
