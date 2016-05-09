@@ -13,8 +13,6 @@ ZCL_CRM_ZQ3_TABLE5
 
 
 
-
-
 Táblák a kapcsolathoz
 -------------------------------
 1. CRMC_OBJ_BTIL_C-Customer specific implementations for objects
@@ -65,14 +63,33 @@ class-methods GET_ZC67_UJ_DATA_ATTR3
 *---------------------------------------*
 (mintaként másolva ZQ_3_uj_Table7)
 
+Na ze nem tom mi ZU vagy 
+és WS_DESIGN_TOOL
+
+0. GENIL model browser
+
+
 1. Struktúra létrehozása
 OK- ZCRMST_ZQ3_TABLE8
 
 2. bekötni a genilbe
 OK- ZQ_3_uj_Table7 sor másolása ZQ_3_uj_Table8
+
 2.1 új sor a ZQ_3_uj_Table8
+()
+
 2.2 új sor a ZQ_3_uj_Table8
+(
+ZTemplSet	ZTemplZQ3uj	ZQ_3_uj_Templ	BT Gazdasági mûvelet	C 1	A 0..1
+ZQ_3_uj_Templ	ZQ3ujTemplZQ3ujTable8	ZQ_3_uj_Table8	BT Gazdasági mûvelet	C 1	B 0..n	
+)
+
 2.3 új sor a ZQ_3_uj_Table8
+(ZQ_3_uj_Table8		ZCRMST_ZQ3_TABLE8
+nem jó helyette:
+ ZQ_3_uj_Table8		ZCL_CRM_ZQ3_TABLE8
+)
+
 
 
 3. felvenni a webservicébe
@@ -82,9 +99,29 @@ IF_CRM_RUNTIME_BTIL~READ_ATTRIBUTES
 
 
 4. 
-
+táblatípus létrehozása
+ZCRMST_ZQ3_TABLE8_T
 
 
 5.
+ZQ3ujTemplZQ3ujTable8
 
 
+ZTemplSet	ZTemplZQ3uj	ZQ_3_uj_Templ	BT Gazdasági mûvelet	
+ZQ_3_uj_Templ	ZQ3ujTemplZQ3ujTable8	ZQ_3_uj_Table8	BT Gazdasági mûvelet	C 1	B 0..n	C Aggregáció
+
+
+/$sync
+
+
+CRMC_WST_DOBJ
+hiányzik az
+CRMC_WST_DESIGN
+
+CRMV_WS_METHODS
+táblábai is kell egy bejegyuzés
+
+debuggoláskor:
+CL_WS_WEB_LAYER_API class
+method GET_SRV_OBJ_USAGE
+na itt read-olt és nem találta meg.

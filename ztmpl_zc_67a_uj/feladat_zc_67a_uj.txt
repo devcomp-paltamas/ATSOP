@@ -121,27 +121,95 @@ beállító tábla:	ZCRM_ZQ3_TBLCUS2
 *---------------------------------------*
 
 lehet hogy kell
-ZCRMST_ZQ3_TABLE8-	
+ZCRMST_ZQ3_TABLE8-	(ZCRMST_ZQ3_TABLE8)
 MASS				tömeg
 ONEDAYPOONEPARCEL		1 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
 ONEDAYPOMOREPARCEL		1 munkanapos idõgarancia - Postán marad - t csomag / címzett
-				1 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
-				1 munkanapos idõgarancia - PostaPont - t csomag / címzett
+ONEDAYPPONEPARCEL		1 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
+ONEDAYPPMOREPARCEL		1 munkanapos idõgarancia - PostaPont - t csomag / címzett
 ONEDAYMOLONEPARCEL		1 munkanapos idõgarancia - MOL Po - 1 csomag / címz
 ONEDAYMOLMOREPARCEL		1 munkanapos idõgarancia - MOL Po - több csomag / címz
+--------------------
+
 
 
 ZCRMST_ZQ3_TABLE9-	
 MASS				tömeg
-ONEDAYPOONEPARCEL		2 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
-ONEDAYPOMOREPARCEL		2 munkanapos idõgarancia - Postán marad - t csomag / címzett
-				2 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
-				2 munkanapos idõgarancia - PostaPont - t csomag / címzett
-ONEDAYMOLONEPARCEL		2 munkanapos idõgarancia - MOL Po - 1 csomag / címz
-ONEDAYMOLMOREPARCEL		2 munkanapos idõgarancia - MOL Po - több csomag / címz
+TWODAYPOONEPARCEL		2 munkanapos idõgarancia - Postán marad - 1 csomag / címzett
+TWODAYPOMOREPARCEL		2 munkanapos idõgarancia - Postán marad - t csomag / címzett
+
+TWODAYPPONEPARCEL		2 munkanapos idõgarancia - PostaPont - 1 csomag / címzett
+TWODAY				2 munkanapos idõgarancia - PostaPont - t csomag / címzett
+
+TWODAYMOLONEPARCEL		2 munkanapos idõgarancia - MOL Po - 1 csomag / címz
+TWODAYMOLMOREPARCEL		2 munkanapos idõgarancia - MOL Po - több csomag / címz
 *---------------------------------------*
 
 
 *---------------------------------------*
 lehívások a ZCRM_GET_ZQ3_UJ_TABLE3_ATTR
 függvény adja vissza
+
+
+ZWS_ZC_67A_UJ szolgáltatásdefiníciónak nincs "produktív" státusa
+
+ZC67ARAKLKULDALDIJ
+
+
+  CASE me->get_dev_data( iv_bm_name = 'ZC67UJABOLITION' ) .
+*1  BEÁLLÍTVA: Megjelenik bookmark
+    WHEN '1'.
+      ev_remove = abap_false.
+      RETURN.
+*2  BEÁLLÍTVA: Nem jelenik meg a bookmark
+    WHEN '2'.
+      ev_remove = abap_true.
+      RETURN.
+  ENDCASE.
+
+
+
+ZC67a_uj_Data5	ZC67AUJDATA5	                                        	C Függõ objektum	ZCRMST_ZC_67A_DATA5
+
+ZC_67a_ujTempl	ZC67a_ujTemplZC67a_uj_Data5	ZC67a_uj_Data5	BT Gazdasági mûvelet	C 1	B 0..n	C Aggregáció
+
+ZC67a_uj_Data5	ZCL_CRM_ZC67AUJ_DATA5
+
+
+ZCL_CRM_ZC67AUJ_DATA3_RUN_BTIL másolva ZCL_CRM_ZC67AUJ_DATA5_RUN_BTIL
+
+ZCRM_GET_ZC67A_UJ_ATTR5 függvény
+
+webszervízes
+CRMV_WS_METHODS
+ZC67a_uj_Data5	BT	                              	C	 Hamis	X Igaz	 Hamis
+
+
+ztmpl_ZC_67a_uj.doc	ZC67ARAKLKULDALDIJ	ZC_67A_RAKLKULDALDIJ		benn	
+ztmpl_ZC_67a_uj.doc	ZC67AUAFELAR13		ZC_67A_UAFELAR13		benn
+ztmpl_ZC_67a_uj.doc	ZC67AUAFELAR2		ZC_67A_UAFELAR2			benn
+
+ZC67AUJ1DPOSTMPP
+ZC67AUJ2DPOSTMPP
+
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ		ZQ_3_UJ_EUTDIJ			benn
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ13		ZC_67A_UJ_EUTDIJ13		kuka
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJ2		ZC_67A_UJ_EUTDIJ2		kuka
+ztmpl_ZC_67a_uj.doc	ZC67AUJEUTDIJN		ZQ_3_UJ_EUTDIJN			kuka
+
+ZC67AUJEXTRASZ
+
+ztmpl_ZC_67a_uj.doc	ZC67AUJINVSERVICE	ZC_67A_UJ_INVERTEDSERVICE	benn
+ztmpl_ZC_67a_uj.doc	ZC67AUJLEHIV		ZC_67A_UJ_LEHIV			benn
+
+ZC67AUJPOSTMPP
+ZC67AUJUZFELAR
+
+ztmpl_ZC_67a_uj.doc	ZC67AUJPONTBAN		ZC_67A_UJ_PONTBAN		kuka
+ztmpl_ZC_67a_uj.doc	ZC67AUJVALUEPREMIUM	ZC_67A_UJ_VALUEPREMIUM		benn
+ztmpl_ZC_67a_uj.doc	ZC67AUJVALUEPREMIUM2	ZC_67A_UJ_VALUEPREMIUM		benn
+
+
+
+
+
