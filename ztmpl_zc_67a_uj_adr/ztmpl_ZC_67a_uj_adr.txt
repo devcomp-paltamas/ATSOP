@@ -8,9 +8,94 @@ a táblába biztos nincs mert teljesen új
 
 Újjak:
 
+ZC67AUJADREJK		éjszakai kézbesítés
+ZC67AUJADRPFA		postahelyi feladás
+ZC67AUJADRTFA		telephelyi feladás
+ZC67AUJADR
+ZC67AUJADR
+ZC67AUJADR
+
+*------------------------------------------*
+
+webszerviz: ZWS_ZC_67A_UJ
+
 *------------------------------------------*
 
 
-ZWS_ZC_67A_UJ
+ZWS_ZC_22B akár lehetne minta is
 
-`²²°²``
+jelenleg van:
+
+ZCRMST_ZC_67A_DATA3
+ZCRMST_ZC_67A_DATA4
+ZCRMST_ZC_67A_DATA5
+
+
+
+3 új struktúra táblatípus
+*-----------------------*
+
+ZCRMST_ZC_67A_DATA5
+
+1. ZCRMST_ZC_67A_DATA6
+GUID
+POSTFN
+POSTADR
+REGDATE
+LASTDELDATE
+INDOFCON
+táblatípus: ZCRMST_ZC_67A_DATA6_T
+
+
+ZCRMST_ZC_67A_DATA7
+
+
+2. customizing
+
+2.1 
+ZC67a_uj_Data6	ZC67AUJDATA6	                                        	C Függõ objektum	ZCRMST_ZC_67A_DATA6	CRMT_OBJECT_GUID
+ZC67a_uj_Data7	ZC67AUJDATA7	                                        	C Függõ objektum	ZCRMST_ZC_67A_DATA7	CRMT_OBJECT_GUID
+ZC67a_uj_Data8	ZC67AUJDATA8	                                        	C Függõ objektum	ZCRMST_ZC_67A_DATA8	CRMT_OBJECT_GUID
+
+2.2
+ZC_67a_ujTempl	ZC67a_ujTemplZC67a_uj_Data6	ZC67a_uj_Data6	BT Gazdasági mûvelet	C 1	B 0..n	C Aggregáció
+ZC_67a_ujTempl	ZC67a_ujTemplZC67a_uj_Data7	ZC67a_uj_Data7	BT Gazdasági mûvelet	C 1	B 0..n	C Aggregáció
+ZC_67a_ujTempl	ZC67a_ujTemplZC67a_uj_Data8	ZC67a_uj_Data8	BT Gazdasági mûvelet	C 1	B 0..n	C Aggregáció
+
+2.3
+ZC67a_uj_Data6	ZCL_CRM_ZC67AUJ_DATA6
+ZC67a_uj_Data7	ZCL_CRM_ZC67AUJ_DATA7
+ZC67a_uj_Data8	ZCL_CRM_ZC67AUJ_DATA8
+
+
+3. kezelõ class
+ZCL_CRM_ZC67AUJ_DATA6_RUN_BTIL
+ZCL_CRM_ZC67AUJ_DATA7_RUN_BTIL
+ZCL_CRM_ZC67AUJ_DATA8_RUN_BTIL
+
+4. webszerviz beállítás
+CRMV_WS_METHODS
+majd webszervíz megnézés
+ZC67a_uj_Data6	BT	C	 Hamis	X Igaz	 Hamis	                              
+ZC67a_uj_Data7
+ZC67a_uj_Data8
+
+5.
+ZC67a_uj_Data6	ZCL_CRM_ZC67AUJ_DATA6
+...
+
+ztmpl_ZC_67a_uj.doc	ZC67AUAFELAR13	ZC_67A_UAFELAR13
+
+
+ztmpl_ZC_67a_uj_adr.doc
+
+ZC67AUJADREJK	ZC_67A_UJ_ADREJK
+ZC67AUJADRPFA	ZC_67A_UJ_ADRPFA
+ZC67AUJADRTFA	ZC_67A_UJ_ADRTFA
+
+
+
+
+
+
+
